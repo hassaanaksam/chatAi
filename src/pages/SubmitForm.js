@@ -33,7 +33,7 @@ export default function SubmitForm() {
         },
         confirmButtonColor: 'Black'
       }).then(() => {
-        
+
       })
     })
       .catch(error => {
@@ -45,7 +45,7 @@ export default function SubmitForm() {
     <>
       <NavBar />
 
-      <div className='container d-flex align-items-center justify-content-center vh-100'>
+      <div className='container d-flex align-items-center justify-content-center'>
         <div className='card p-4 w-50 my-3 mx-auto' style={{ width: '600px' }}>
           <h2 className="mb-8 text-center">Upload File</h2>
 

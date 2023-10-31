@@ -13,17 +13,20 @@ import UserHome from './pages/UserHome';
 function App() {
 
   const token = localStorage.getItem('token');
+  const role = localStorage.getItem('role');
+  const user = role === "user"
+  const admin = role === "admin"
 
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/" element={token ? <Home /> : <Login />} />
-            <Route path="/home" element={token ? <UserHome /> : <Login />} />
-            <Route path="/signup" element={token ? <Signup /> : <Login />} />
+            <Route path="/" element={token && admin ? <Home /> : <Login />} />
+            <Route path="/home" element={token && user ? <UserHome /> : <Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/userinterface" element={token ? <UserInterface /> : <Login />} />
-            <Route path="/submitform" element={token ? <SubmitForm /> : <Login />} />
+            <Route path="/submitform" element={token && admin ? <SubmitForm /> : <Login />} />
         </Routes>
       </div>
     </BrowserRouter>

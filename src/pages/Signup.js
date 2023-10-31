@@ -4,7 +4,6 @@ import { object, string } from 'yup';
 import axios from 'axios';
 import { useRef } from 'react';
 import Swal from 'sweetalert2';
-import NavBar from '../components/NavBar';
 
 export default function Signup() {
   
@@ -52,7 +51,6 @@ export default function Signup() {
 
   return (
     <div>
-      <NavBar />
       <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={messageSchema} >
         <div className='container d-flex align-items-center justify-content-center vh-100'>
           <div className='card p-4 w-50 my-3 mx-auto' style={{ width: '600px' }}>

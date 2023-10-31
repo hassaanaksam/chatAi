@@ -13,7 +13,7 @@ export default function NavBar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-black">
         <div className="container">
           
-          <NavLink className="navbar-brand" to="/">ChatAI</NavLink>
+          <NavLink className="navbar-brand" to="/">Admin Dashboard</NavLink>
           
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul className="navbar-nav ml-auto">
@@ -21,18 +21,11 @@ export default function NavBar() {
                 <NavLink className="nav-link" to="/">Home</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/signup">Signup</NavLink>
-              </li>
-              <li className="nav-item">
                 <NavLink className="nav-link" to="/submitform">Submit Form</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/login">Login</NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/login" onClick={handleLogout}>Logout</a>
               </li>
-              
             </ul>
           </div>
           

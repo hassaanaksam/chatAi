@@ -22,6 +22,7 @@ export default function Login() {
     axios.post("http://localhost:5000/api/user/login", values)
       .then(res => {
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("role", res.data.user.role);
         if (res.data.user.role === "admin") {
 
           console.log('Login successful', res.data);
@@ -50,7 +51,7 @@ export default function Login() {
             },
             confirmButtonColor: 'Black'
           }).then(() => {
-            navigate('/userinterface');
+            navigate('/home');
             window.location.reload();
           })
         }
