@@ -8,7 +8,7 @@ export default function UserNavbar() {
     localStorage.removeItem('token')
 
   }
-
+  
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black">
         <div className="container">

@@ -5,10 +5,12 @@ import NavBar from '../components/AdminNavbar';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-export default function SubmitForm() {
+export default function UpdateForm() {
 
   const [file, setFile] = useState("");
+  const { id } = useParams();
 
   const handleSubmit = (e) => {
 
@@ -17,7 +19,7 @@ export default function SubmitForm() {
     const form = new FormData();
     form.set("file", file);
 
-    axios.post("http://192.168.100.25:5000/api/document/create", form, {
+    axios.post(`http://192.168.100.25:5000/api/document/create/${id}`, form, {
       headers: {
         "Content-Type": "multipart/form-data"
       }
@@ -47,7 +49,7 @@ export default function SubmitForm() {
 
       <div className='container d-flex align-items-center justify-content-center'>
         <div className='card p-4 w-50 my-3 mx-auto' style={{ width: '600px' }}>
-          <h2 className="mb-8 text-center">Upload File</h2>
+          <h2 className="mb-8 text-center">Upated File</h2>
 
 
           <div className="mb-3">

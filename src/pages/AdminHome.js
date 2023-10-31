@@ -1,12 +1,11 @@
 import React from 'react'
 import UserInterface from './ChatAi'
-import UserNavbar from '../components/UserNavbar'
+import NavBar from '../components/AdminNavbar'
 
-
-export default function UserHome() {
+export default function AdminHome() {
   return (
     <div>
-      <UserNavbar />
+      <NavBar />
         <UserInterface />
     </div>
   )
