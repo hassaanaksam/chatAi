@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default function NavBar() {
+export default function UserNavbar() {
 
   function handleLogout () {
 
@@ -22,12 +22,6 @@ export default function NavBar() {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/signup">Signup</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/submitform">Submit Form</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/login">Login</NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/login" onClick={handleLogout}>Logout</a>

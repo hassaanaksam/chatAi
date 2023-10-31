@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import SubmitForm from './pages/SubmitForm';
-import Logout from './components/Logout';
+import UserHome from './pages/UserHome';
 
 
 function App() {
@@ -19,11 +19,11 @@ function App() {
       <div className="App">
         <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={<Logout/>} />
             <Route path="/" element={token ? <Home /> : <Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/userinterface" element={<UserInterface />} />
-            <Route path="/submitform" element={<SubmitForm />} />
+            <Route path="/home" element={token ? <UserHome /> : <Login />} />
+            <Route path="/signup" element={token ? <Signup /> : <Login />} />
+            <Route path="/userinterface" element={token ? <UserInterface /> : <Login />} />
+            <Route path="/submitform" element={token ? <SubmitForm /> : <Login />} />
         </Routes>
       </div>
     </BrowserRouter>

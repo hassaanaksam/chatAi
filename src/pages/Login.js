@@ -22,11 +22,11 @@ export default function Login() {
     axios.post("http://localhost:5000/api/user/login", values)
       .then(res => {
         localStorage.setItem("token", res.data.token);
-        if (res.data.user.role == "admin") {
+        if (res.data.user.role === "admin") {
 
           console.log('Login successful', res.data);
           Swal.fire({
-            title: 'Logged in as admin successfully',
+            title: 'Logged in Admin successfully',
             showClass: {
               popup: 'animate__animated animate__fadeInDown'
             },
@@ -36,12 +36,12 @@ export default function Login() {
             confirmButtonColor: 'Black'
           }).then(() => {
             navigate('/');
-            
+            window.location.reload();
           })
-        } else if (res.data.user.role == "user") {
+        } else if (res.data.user.role === "user") {
           console.log('Login successful', res.data);
           Swal.fire({
-            title: 'Logged in as user successfully',
+            title: 'Logged in User successfully',
             showClass: {
               popup: 'animate__animated animate__fadeInDown'
             },
@@ -51,6 +51,7 @@ export default function Login() {
             confirmButtonColor: 'Black'
           }).then(() => {
             navigate('/userinterface');
+            window.location.reload();
           })
         }
       })
