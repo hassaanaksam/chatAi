@@ -1,0 +1,10 @@
+
+
+.auto-expand {
+  overflow: hidden; /* Hide the scrollbar */
+  resize: none; /* Disable manual resizing */
+}
+
+.auto-expand:focus {
+  overflow: auto; /* Re-enable scrolling when focused */
+}
